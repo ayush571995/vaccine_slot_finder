@@ -1,4 +1,5 @@
 import argparse
+from time import sleep
 from api_handler import make_api_call
 
 parser = argparse.ArgumentParser()
@@ -10,4 +11,7 @@ date = str(args['d'])
 pincode = str(args['p']).strip()
 
 
-make_api_call(pincode, date)
+while True:
+    make_api_call(pincode, date)
+    print('=========================================================')
+    sleep(300)
